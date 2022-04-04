@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Word Issue
+{% endblock %}
+
+{% block content %}
+    {% include 'form.html' %}
+            <div class="form-group">
+                {{text}}
+                <!-- Enter Captcha Code After This Line -->
+                
+                <img src="./static/wordissue.png" style="width: 200px" alt=""><br>
+                <p class="mt-4">Enter Captcha Text:    </p>
+                <input type="text" name="captcha-text">
+                <!-- Enter Captcha Code Before This Line -->
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="col"></div>
+</div>    
+{% endblock %}

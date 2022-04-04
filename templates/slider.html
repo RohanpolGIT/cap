@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Slider Captcha
+{% endblock %}
+
+{% block content %}
+    {% include 'form.html' %}
+                <div class="form-group">
+                    <label for="slidercap">Slide to enable the submit button</label><br>
+                    <input type="range" name="slidercap" value="0" min="0" max="100" required id="slider">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col" id="dummy"></div>
+    </div>
+
+    <script type="text/javascript" >
+        $(function($){
+            $("#submitButton").attr("disabled",true);
+            $("#slider").change(function(){
+                if( $("#slider").val() == 100 ){
+                    $("#submitButton").removeAttr("disabled");
+                } else {
+                    $("#submitButton").attr("disabled",true);
+                }
+            })
+        });
+    </script>
+    
+{% endblock %}
+
